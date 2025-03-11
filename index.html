@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    <section id="header" class="header">
+        <nav>
+            <div class="nav-links" id="navlinks">
+                <i class="fa fa-times" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="#about">ABOUT</a></li>
+                    <li><a href="register.html">REGISTER</a></li>
+                    <li><a href="#contact">CONTACT</a></li> 
+                </ul>
+            </div>
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+        </nav>
+        
+    
+        <div class="container">
+            <h2>Login</h2>
+            <input type="text" id="mobileNumber" placeholder="Enter Mobile Number">
+            <input type="password" id="password" placeholder="Enter Password">
+            <button class="btn-12"onclick="validateUser()"><span>Login</span></button>
+
+        </div>
+    
+        <script src="script.js"></script>
+    </section>
+    
+    <section id="about" class="about-header">
+        <nav>
+            <div class="nav-links" id="navlinks">
+                <ul>
+                    <li><a href="#about">ABOUT<i class="fas fa-info-circle"></i></a></li>
+                    <li><a href="#header">LOGIN</a></li>
+                    <li><a href="#contact">CONTACT<i class="fas fa-headset"></i></a></li> 
+                </ul>
+            </div>
+        </nav>
+        
+        <div class="about-container">
+            <h2>Discover Our Hotel Booking Platform</h2>
+            <p>Welcome to the ultimate destination for hotel bookings. Whether you're seeking adventure or relaxation, we have the perfect hotel for every traveler. Our platform ensures a seamless experience from booking to stay!</p>
+            <p>Enjoy exclusive offers and hassle-free reservations at the best hotels worldwide. Book your dream stay now and let us take care of the rest.</p>
+        </div>
+    </section>
+    <section id="contact" class="contact">
+        <nav>
+            <div class="nav-links" id="navlinks">
+                <ul>
+                    <li><a href="#header">HOME</a></li>
+                    <li><a href="#about">ABOUT</a></li>
+                    <li><a href="#">HOTELS</a></li>
+                    <li><a href="#contact">CONTACT</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="support-container">
+            <h2>Need Assistance? We're Here to Help!</h2>
+            <p>Don't worry, we're on it! Our team is already working hard to resolve any issues you might have.</p>
+            <button onclick="checkSupport()">Check Support Status</button>
+        </div>
+
+        <div class="footer">
+            <p>&copy; 2025 Hotel Booking. All Rights Reserved.</p>
+        </div>
+    </section>
+</body>
+</html>
