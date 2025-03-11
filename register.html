@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+<body class="register">
+    <div class="register">
+        <h1>Register</h1>
+        <input type="text" id="name" placeholder="Enter Name">
+        <input type="text" id="contact" placeholder="Enter Mobile Number/Email ID">
+        <input type="password" id="password" placeholder="Enter Password">
+        <button class="register-btn"onclick="validateUserForRegister()">Register</button>
+    </div>
+
+    <script>
+        function validateUserForRegister() { 
+            const name = document.getElementById("name").value.trim();
+            const contact = document.getElementById("contact").value.trim();
+            const password = document.getElementById("password").value.trim();
+
+            const mobileRegex = /^[0-9]{10}$/;  
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; 
+
+            if (!name) {
+                alert("Please enter a valid Name.");
+                return;
+            }
+            if (!contact) {
+                alert("Contact field cannot be empty.");
+                return;
+            }
+            if (!(mobileRegex.test(contact) || emailRegex.test(contact))) {
+                alert("Enter a valid 10-digit mobile number or a valid email address.");
+                return;
+            }
+            if (password.length < 6) {
+                alert("Password must be at least 6 characters long.");
+                return;
+            }
+            if (localStorage.getItem("userData")) {
+                alert("User already registered! Redirecting to home.");
+                window.location.href = "home.html";
+                return;
+            }
+            localStorage.setItem("userData", JSON.stringify({ name, contact }));
+            alert("Registration successful!");
+            window.location.href = "home.html";
+        }
+    </script>
+</body>
+</html>
