@@ -87,7 +87,7 @@
     let destinationPage = pageMap[location];
     
     if (destinationPage) {
-        window.location.href = ${destinationPage}?checkin=${checkin}&checkout=${checkout};
+        window.location.href = '${destinationPage}?checkin=${checkin}&checkout=${checkout}';
     } else {
         alert("Page not found for the selected location.");
     }
